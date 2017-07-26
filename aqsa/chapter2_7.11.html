@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Q#7.11</title>
+</head>
+<body>
+<script>
+			// Pseudocode
+			// Calculate the average miles per gallon
+
+			// Initialize variable for total gallons to zero
+			// Initialize variable for total miles to zero
+
+			// While the user has not entered the sentinel
+			//    Input the gallons used
+			//    Input the miles driven
+			//    Calculate the miles per gallon
+			//
+			//    If the sentinel is entered
+			//      Divide the overall average by the quantity of entries
+			//      Print the overall average miles per gallon
+			var counter;
+			var gallons, miles, tankAverage, overallAverage, total;
+			var gallonValue;
+			var mileValue;
+			counter = 0;
+			total = 0;
+		while(true)
+		{
+		    gallons = prompt("Enter the gallons used, (-1 to end): ");
+			gallonValue = parseInt(gallons);
+			
+			miles = prompt("Enter the miles driven: \n");
+			mileValue = parseInt(miles);
+			
+			tankAverage = mileValue /gallonValue;
+			document.alert("The miles per gallon for this tank was " + tankAverage);
+			
+			total += tankAverage;
+			counter += 1;
+			
+			<!-- when user enter -1 -->
+			if( gallonValue == -1)
+			{
+			    overallAverage = total/counter;
+				window.alert("The overall average miles/gallon was :" + overallAverage);
+				
+				return 0;
+			}
+		}
+		
+</script>
+</body>
+</html>

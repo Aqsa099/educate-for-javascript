@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Chapter#2 : Question#7.16 </title>
+	<style>
+	.table {
+	        border-style: 2px solid;
+	}
+	</style>
+</head>
+<body>
+    <script>
+	     var ten = 10;
+		 var hundred = 100;
+		 var thousand = 1000;
+		 var a, b, c;
+		<!-- Table start -->
+	    document.writeln("<table border = 2>")
+		<!-- first row -->
+		document.writeln("<tr>")
+	    document.writeln("<th>N </th> <th> N*10 </th><th> N*100  </th> <th> N*100 </th>");
+	    document.writeln("</tr>")
+        <!-- remaing row that contains loop -->		
+	    document.writeln("<tr>") 
+        		
+		   for(var n=1; n<= 6; n++)
+                { 
+					a = n * ten;
+					b = n * hundred;
+					c = n * thousand;
+					document.writeln( "<td>" + n +"</td>" +
+       					              "<td>" + a + "</td>"+
+       					              "<td>" + b + "</td>"+
+       					              "<td>" + c + "</td>");
+				    document.writeln("</tr>");
+				}
+		document.writeln("</table>")
+	</script>
+</body>
+</html>
