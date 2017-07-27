@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title> Chapter#2: Examples </title>
+		<style>
+	    table {
+		        width : 300px;
+				border-collapse: collapse;
+				background-color: lightblue;
+		}
+		table, td, th {
+		        border: 1px solid black;
+				padding: 4px;
+		}
+		th {
+		        text-align:left;
+				color: white;
+				background-color:darkblue;
+			}
+		tr.oddrow{
+		        background-color:white;
+		}
+	</style>
+</head>
+<body>
+        <!--Counter-controlled repetition 
+		    while loop-->
+		<h2><u> while loop </u></h2>
+		<script>
+		        var counter = 1;
+				while( counter <= 7)
+				{
+				    document.writeln( "<p style = 'font-size: " + counter + "ex'> HTML5 font size:" + counter + "ex </p>");
+					++counter;
+				}
+		</script><br>
+		<h2><u> for loop </u></h2>
+		<!-- for loop -->
+		<script>
+		        var i;
+				for(i=1 ; i<=7; i++)
+				{
+				    document.writeln("<p style = 'font-size:" + i + "ex' > HTML5 font sizes: " + i + "ex </p>")
+				}
+		</script>
+		
+		<!-- Using do while loop -->
+		<h2><u> do while </u></h2>
+		<script>
+		        var counter =1;
+				do
+				{
+				     document.writeln("<p style = 'font-size:" + counter + "ex' > HTML5 font sizes: " + counter + "ex </p>")
+					 counter++;
+				}
+				while( counter <= 7);
+		
+		</script>
+		
+		<!-- the sum of even integers from 2 to 100 -->
+		<script>
+		        var sum = 0;
+				for(var i=2; i<=100; i+=2)
+				{
+				    sum += i;
+				}
+				document.writeln("The sum of the even integers from 2 to 100: " + sum);
+		</script><br><br>
+		
+		
+		
+		<!-- compound interest calculate using for loop -->	
+		<script>
+		<!-- start table -->
+		document.writeln("<table>");
+		document.writeln("<caption> Calculating compound interest </caption>");
+		<!-- start first row that contains heading -->
+		document.writeln("<tr>");
+		document.writeln("<th> Year  </th>");
+		document.writeln("<th> Amount on deposit </th>");
+		document.writeln("</tr>");
+		        var amount;
+				 var year;
+				var principal = 1000.00;
+				var rate = 0.1;
+				for ( year = 1; year <= 10; ++year)
+				{
+				    amount = principal * Math.pow( 1.0 + rate, year );
+			   
+				if( year % 2 !== 0)
+				{
+					document.writeln("<tr  class='oddrow'>");
+					document.write( "<td>" + year + " </td> <td>" + amount.toFixed(2) + "</td></tr>");
+					
+				}
+				else 
+				{
+					document.writeln("<tr>");
+					document.write( "<td>" + year + " </td> <td>" + amount.toFixed(2) + "</td> </tr>");
+					
+				}
+			}
+        document.writeln("</table>");			
+		</script> 
+		
+		<!-- switching between HTML5 list formate -->
+        <h3> HTML5 list style </h3>
+        <button onclick="test()"> click </button>
+		<script>
+		function test()
+		{
+		    var choice;
+			var startTag;
+			var endTag;
+			var validInput = true;
+			var listType;
+			<!-- input from user -->
+			choice = prompt("Select a list style: \n" +
+			                       "1(numbered), 2(lettered), 3(roman numbered)");
+			switch(choice)
+			{
+			    case "1":
+				startTag = "<ol>";
+				endTag = "</ol>";
+				listType = "<h1> Numbered List </h1>";
+				break;
+				
+				case "2":
+				startTag = "<ol style = 'list-style-type: upper-alpha'>";
+				endTag = "</ol>";
+				listType = "<h1> Lettered List </h1>";
+				break;
+				
+				case "3":
+				startTag = "<ol style = 'list-style-type: upper-roman'>";
+				endTag = "</ol>";
+				listType = "<h1> Roman Numbered </h1>";
+				break;
+				
+				default:
+				validInput = false;
+				break;
+			}
+			if(validInput == true)
+			{
+			    document.write(listType + startTag);
+				
+				for(var i=1; i<=3; ++i)
+				{
+				    document.write("<li> List Item" + i + "</li>");
+				}
+			}
+			else
+			{
+			    document.write("Invalid input!" + choice);
+			}
+		}
+		
+		</script>
+		
+		<!-- using break and count statement -->
+		<h3> Break Statement </h3>
+		<script>
+		        for(var j=1; j <= 10; j++ )
+				{
+				    if(j == 5)
+					{
+					    break;
+					}
+				    document.write(j + " ")
+				}
+		</script>
+		<h3> Continue Statement </h3>
+		<script>
+		        for(var k=1; k <= 10; k++ )
+				{
+				    if(k == 5)
+					{
+					    continue;
+					}
+				    document.write(k + " ")
+				}
+		</script><br><br>
+		
+</body>
+</html>

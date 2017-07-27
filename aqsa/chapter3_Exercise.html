@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title> Chapter#3:Exercise </title>
+		
+		<style>
+		
+	    table {
+		        width : 300px;
+				border-collapse: collapse;
+				background-color: lightblue;
+		}
+		table, td, th {
+		        border: 1px solid black;
+				padding: 4px;
+		}
+		th {
+		        text-align:left;
+				color: white;
+				background-color:darkblue;
+			}
+		tr.oddrow{
+		        background-color:white;
+		}
+	
+		</style>
+</head>
+<body>
+        <!-- pateren -->
+		<script> 
+			    document.writeln( "<table>" ); 
+				for ( var i=1; i <=7; i++ ) 
+				{ 
+						 document.writeln( "<tr>" ); 
+						 for ( var j=1; j <=5; j++ ) 
+						 document.writeln( "<td>(" +i+", " +j+")</td>" ); 
+						 document.writeln( "</tr>" );
+				} // end for 
+					document.writeln( "</table>" );		 
+         </script>
+		
+		<!--  Write a script that calculates the product of the odd integers from 1 to 15, 
+		       then outputs HTML5 text that displays the results. -->
+	     
+		<script>
+		        var sum = 0;
+				for(var i=1; i<=15; i++)
+				{
+				    if(i%2 != 0)
+					{
+				    sum += i;
+					}
+				}
+				document.writeln("<h3>The sum of the Odd integers from 1 to 15 " + "= " + sum + "</h3>");
+		</script>
+		
+		
+		<!-- Write a script that finds the smallest of several nonnegative integers. 
+		     Assume that the first value read specifies the number of values to be input from the user. -->
+		
+		<h3> Smallest Number </h3>
+		<button onclick ="smallest()" > Click </button>
+		
+		<script>
+		function smallest()
+		{
+		    var totalItem;
+			var small =0;
+			var i;
+			
+			totalItem = parseInt(prompt("Enter the number!"));
+			
+			var inputArray = new Array(totalItem);
+			    
+				for(i=0; i<=totalItem; i++)
+				{
+				    inputArray[i] = parseInt(prompt("Enter any number!"));
+					
+					small = inputArray[0];
+					if(inputArray[i] < small)
+					{
+						small = inputArray[i];
+					}
+				}
+			window.alert("The smallest number is: " + small);
+		}		
+		</script><br><br>
+		
+		<!-- Modify the compound interest programin Fig. 8.6 to repeat its steps for interest 
+		     rates of 5,6, 7, 8,9and10percent.
+			 Usea for statement to vary the interest rate. Use a separate table for each rate.--> 
+		
+		<h2>Interest rates of 5,6, 7, 8,9and10percent.</h2>
+		
+		<script>
+			<!-- start table -->
+			for(var t= 0.05; t <= 0.1; t += 0.01 )
+				{
+			document.writeln("<table>");
+			document.writeln("<caption> Calculating compound interest </caption>");
+			<!-- start first row that contains heading -->
+			document.writeln("<tr>");
+			document.writeln("<th> Year  </th>");
+			document.writeln("<th> Amount on deposit </th>");
+			document.writeln("</tr>");
+		        var amount;
+				var year;
+				var principal = 1000.00;
+				var rate = t;
+				for ( year = 1; year <= 10; ++year)
+				{
+				    amount = principal * Math.pow( 1.0 + rate, year );
+			   
+				if( year % 2 !== 0)
+				{
+					document.writeln("<tr  class='oddrow'>");
+					document.write( "<td>" + year + " </td> <td>" +"$"+ amount.toFixed(2) + "</td></tr>");
+					
+				}
+				else 
+				{
+					document.writeln("<tr>");
+					document.write( "<td>" + year + " </td> <td>" +"$"+ amount.toFixed(2) + "</td> </tr>");
+					
+				}
+			}
+					document.writeln("</table> <br>");
+		}		
+		</script> 
+	
+	<!--One interesting application of computers is drawing graphs and bar charts (sometimes called histograms).
+    	Write ascriptthat readsfive numbersbetween1 and 30. Foreach number read, output HTML5 text that displays
+		a line containing the same number of adjacent asterisks. For example, if your program reads the number 7, 
+		it should output HTML5 text that displays*******. -->
+		<h3> Read the number and print *** </h3>
+		<button onclick="star()" > Click </button>
+		<script>
+		    function star()
+			{
+			var number;
+			number = parseInt(prompt("Enter the number between 1 - 30: "));
+			if(number > 30)
+			{
+			    document.write("Invalid input!");
+			}
+			else
+				for(var i = 0; i<= number; i++)
+				{
+					document.write("*");
+				}
+			}
+		</script>
+		</body>
+		</html>
+			
+			
+
+</body>
+</html>

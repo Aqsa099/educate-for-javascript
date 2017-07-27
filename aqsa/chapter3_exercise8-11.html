@@ -1,0 +1,84 @@
+<html>
+<head>
+</head>
+<body>
+
+<!-- A mail-order house sells five different products whose retail prices are as follows:
+		     product1, $2.98; 
+			 product 2,$4.50; 
+			 product 3, $9.98; 
+			 product 4, $4.49; and  
+			 product 5, $6.87. 
+			 Write a script that reads a series of pairs of numbers as follows: 
+			 a) Product number 
+			 b) Quantity sold for one day Your program should use a switch statement to determine each product’s retail price
+			 and should calculate and output HTML5 that displays the total retail value of all the products sold last week. 
+			 Use a prompt dialog to obtain the product number and quantity from the user. Use a sentinel-controlled loop to determine 
+			 when the program should stop looping and display the final results. -->
+			
+			<h3>Enter product number for an item, -1 to quit: </h3>
+			<ol>
+			    <li>Product-1</li>
+			    <li>Product-2</li>
+			    <li>Product-3</li>
+			    <li>Product-4</li>
+			    <li>Product-5</li>
+			</ol>
+			<button onclick = "detail()" > Click </button>
+			<script>
+					
+				function detail()
+					{
+			        var productNo = 0;
+					var quantity ;
+					var ans = 0;
+					var counter = 0;
+					var total = 0;
+					var price;
+					
+				productNo = parseInt(prompt("Enter the product number:"));
+				
+				while(productNo != -1)
+				{
+					switch(productNo)
+					{
+					    case 1: price= 2.98;
+						quantity= parseInt(prompt("Enter number of quantities sold for product-1:"));
+						ans = price*quantity;
+						break;
+						case 2: price= 4.50;
+						quantity= parseInt(prompt("Enter number of quantities sold for product-2:"));
+						ans = price*quantity;
+						break;
+						case 3: price= 9.98;
+						quantity= parseInt(prompt("Enter number of quantities sold for product-3:"));
+						ans = price*quantity;
+						break;
+						case 4: price= 4.49;
+						quantity= parseInt(prompt("Enter number of quantities sold for product-4:"));
+						ans = price*quantity;
+						break;
+						case 5: price= 6.87;
+						quantity= parseInt(prompt("Enter number of quantities sold for product-5:"));
+						ans = price*quantity;
+						break;
+						default: window.alert("No proper input, Please try Again");
+						break;
+						}
+						counter = counter + 1;
+                                    total = total + ans;
+									productNo= parseInt(prompt("Enter product number, -1 to Quit"));
+									
+				}
+									if(counter!=0)
+									{
+									window.alert( "Total Sales for Last week is: $" + total );
+									}
+									else
+									{
+									window.alert("No product number is entered, Thank you");
+									}	
+					}
+			</script>
+	</body>
+	</html>
