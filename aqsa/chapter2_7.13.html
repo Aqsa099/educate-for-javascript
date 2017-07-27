@@ -15,7 +15,19 @@
 			  3      99.95 
 			  4      350.89 -->
 	<script>
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+	        var item;
+			var values, total =0;
+			
+			item = parseInt(prompt("Enter the item sold for last week: "));
+			while (item > 0)
+			{
+			    values = parseFloat(prompt("Enter value per item: "));
+				total += values;
+				item --;	
+			}
+			document.writeln("Weekly pay is $200 : <br>");
+			document.writeln("Total sale for last week: "+total +"<br>");
+			document.writeln("New sale with commission: "+(200+(total*0.09)) );                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 	</script>
 
      
